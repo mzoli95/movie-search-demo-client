@@ -17,6 +17,9 @@ Angular 21 web application for searching movies from external APIs (OMDb, TMDb) 
 - Future Enhancements
 
 ## Overview
+<img width="1914" height="1305" alt="image" src="https://github.com/user-attachments/assets/c738c417-ae00-4c8f-867f-c364b5259caf" />
+<img width="2241" height="589" alt="image" src="https://github.com/user-attachments/assets/d8a8f31f-da9d-42a3-9ecf-ee480d72dc23" />
+<img width="1284" height="1018" alt="image" src="https://github.com/user-attachments/assets/545d6e03-10a3-48dd-8329-37e8684de468" />
 
 Movie Information Provider Client is a modern, scalable Angular frontend that communicates with a REST API backend for movie search and autocomplete functionality.
 
@@ -98,26 +101,26 @@ Query Parameters:
 
 ## Features
 
-**🔍 Core Search**
+** Core Search**
 
 - Search movies by title across two external APIs
 - Provider selection (OMDb, TMDb)
 - Paginated result table with title, year, and director(s)
 
-**✨ Autocomplete**
+** Autocomplete**
 
 - Type-ahead suggestions as you type
-- Debounced requests (1000ms) to reduce API load
+- Debounced requests (500ms) to reduce API load
 - Infinite-scroll pagination on suggestion list
 - Automatic request cancellation on new input
 
-**⚙️ State Management**
+** State Management**
 
 - NgRx for centralized state
 - Separate concerns: movie search vs autocomplete
 - Loading and error states per feature
 
-**📱 UX Polish**
+** UX Polish**
 
 - Search button shows spinner during loading
 - Result table dims with overlay while fetching
@@ -222,7 +225,7 @@ const AUTOCOMPLETE_INITIAL_LIMIT = 10; // Default suggestions count
 
 1. User types in search input
 2. Input change triggers `autocompleteQueryChanged` action
-3. Effect debounces (1000ms) and filters duplicates
+3. Effect debounces (500ms) and filters duplicates
 4. If query is empty, suggestions are cleared
 5. Otherwise, `loadAutocompleteSuggestions` is dispatched with initial limit (10)
 6. Backend returns array of suggestions
